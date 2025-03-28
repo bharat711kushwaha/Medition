@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 220 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 15%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 95% 39%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 220 20% 40%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 50%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg rounded-2xl;
+  }
+
+  .glass-panel-dark {
+    @apply bg-gray-800/80 backdrop-blur-md border border-gray-700/20 shadow-lg rounded-2xl;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .subtle-shadow {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12;
+  }
+
+  .section-container {
+    @apply py-6 md:py-10;
+  }
+
+  .card-container {
+    @apply bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .card-header {
+    @apply text-xl font-semibold mb-4 text-foreground;
+  }
+
+  .slide-enter {
+    @apply animate-slide-up;
+  }
+
+  .page-transition {
+    @apply animate-fade-in;
+  }
+  
+  .button-primary {
+    @apply px-6 py-3 bg-calmBlue-500 text-white rounded-lg hover:bg-calmBlue-600 transition-colors duration-300 focus-ring;
+  }
+  
+  .button-secondary {
+    @apply px-6 py-3 bg-mindfulTeal-500 text-white rounded-lg hover:bg-mindfulTeal-600 transition-colors duration-300 focus-ring;
+  }
+  
+  .button-outline {
+    @apply px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-300 focus-ring;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-calmBlue-500 focus:outline-none focus:ring-2 focus:ring-calmBlue-500/20 transition-all duration-200;
+  }
+}
