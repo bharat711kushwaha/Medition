@@ -1,6 +1,6 @@
 import { getToken, getAuthHeader } from '@/utils/auth';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://medition-1.onrender.com';
 
 // Helper function to log requests
 const logRequest = (method: string, endpoint: string, headers: any) => {
