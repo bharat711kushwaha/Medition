@@ -18,13 +18,25 @@ const meditationSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  audioUrl: {
+  videoUrl: {
     type: String,
     required: true
   },
   imageUrl: {
     type: String,
     required: true
+  },
+  favorites: {
+    type: Number,
+    default: 0
+  },
+  useYouTubeAPI: {
+    type: Boolean,
+    default: false
+  },
+  searchQuery: {
+    type: String,
+    default: ''
   }
 });
 
